@@ -47,6 +47,12 @@ python scan.py "D:\drivers" -o results.txt
 
 # Lower the size threshold (default 0xA7000 = 668 KB)
 python scan.py "D:\drivers" --required 0x40000
+
+# Save the top 10 unique-by-name candidates into ./result/<rank>_<name>.sys
+python scan.py "D:\drivers" --save 10 -o results.txt -v
+
+# Skip the per-hit signtool /kp check (faster scan, WHCP column shows '-')
+python scan.py "D:\drivers" --no-whcp
 ```
 
 ---
